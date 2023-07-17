@@ -29,24 +29,20 @@ let inputNum1
 
 let inputNum2
 
-function num1IsNaN() {
+function numberHandler() {
 
     inputNum1 = secondTaskInput1.value;
 
     inputNum2 = secondTaskInput2.value;
 
-    if (isNaN(inputNum1)) {
-        console.log("Тут не 2 числа");
-    } else if (isNaN(inputNum2)) {
-        console.log("Тут не 2 числа");
-    } else if (Number(inputNum1) + Number(inputNum2) <= 10) {
-        console.log("Сума менша або дорівнює 10");
+    if (inputNum1 + inputNum2 <= 10) {
+        console.log("Сума менше або дорівнює 10")
     } else {
-        console.log("Сума більше за 10");
+        console.log("Сума більше 10")
     }
     }
 
-secondTaskButton.addEventListener("click", num1IsNaN);
+secondTaskButton.addEventListener("click", numberHandler);
 
 // Завдання 3
 
@@ -74,31 +70,12 @@ let fourthTaskNum;
 
 function isNumInDiapason() {
 
-    if (isNaN(fourthTaskInput.value)) {
-        console.log("Це не число");
+    fourthTaskNum = fourthTaskInput.value
+    if (fourthTaskNum >= 10 && fourthTaskNum <= 20) {
+        console.log("Число входить в діапазон від 10 до 20")
     } else {
-        fourthTaskNum = Number(fourthTaskInput.value);
-
-        switch (fourthTaskNum) {
-            case 20:
-            case 19:
-            case 18:
-            case 17:
-            case 16:
-            case 15:
-            case 14:            
-            case 13:            
-            case 12:            
-            case 11:            
-            case 10:            
-                console.log("Число входить в діапазон від 10 до 20");
-            break
-        
-            default:
-                console.log("Число не входить в діапазон від 10 до 20");
-        }
-}
-    
+        console.log("Число не входить в діпазаон від 10 до 20")
+    }
 }
 
 fourthTaskButton.addEventListener("click", isNumInDiapason);
@@ -113,31 +90,21 @@ const fifthTaskInput3 = document.querySelector("#input-task5-3");
 
 const fifthTaskButton = document.querySelector("#btn5");
 
-let name;
-
-let password;
-
-let email;
-
 let passwordLength;
 
 let nameLength;
 
-let isNameValid;
+let isNameValid = false;
 
-let isEmailValid;
+let isEmailValid = false;
 
-let isPasswordValid;
+let isPasswordValid = false;
 
 function checkData() {
 
-    name = fifthTaskInput1.value;
+    nameLength = fifthTaskInput1.length;
 
-    nameLength = name.length;
-
-    password = fifthTaskInput3.value;
-
-    passwordLength = password.length;
+    passwordLength = fifthTaskInput3.length;
 
     email = fifthTaskInput2.value;
 
